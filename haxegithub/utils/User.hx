@@ -7,6 +7,7 @@ class User {
 	/**
 	 * Return the User JSON
 	 * @param user 
+	 * @return Dynamic
 	 */
 	public static function get(user:String):Dynamic {
 		var api = new GithubAPI();
@@ -15,8 +16,20 @@ class User {
 	}
 
 	/**
+	 * Return the Full User JSON, Requires the Token
+	 * @param token 
+	 * @return Dynamic
+	 */
+	public static function getCurrent(token:String):Dynamic {
+		var api = new GithubAPI(token);
+		api.request('user');
+		return api.json;
+	}
+
+	/**
 	 * Return the User Followers JSON
 	 * @param user 
+	 * @return Dynamic
 	 */
 	public static function getFollowers(user:String):Dynamic {
 		var api = new GithubAPI();
@@ -27,6 +40,7 @@ class User {
 	/**
 	 * Return the User Following Json
 	 * @param user 
+	 * @return Dynamic
 	 */
 	public static function getFollowing(user:String):Dynamic {
 		var api = new GithubAPI();
@@ -37,6 +51,7 @@ class User {
 	/**
 	 * Return the Repositorys from the User
 	 * @param user 
+	 * @return Dynamic
 	 */
 	public static function getRepositorys(user:String):Dynamic {
 		var api = new GithubAPI();
@@ -47,6 +62,7 @@ class User {
 	/**
 	 * Return the Gits from the user
 	 * @param user 
+	 * @return Dynamic
 	 */
 	public static function getGists(user:String):Dynamic {
 		var api = new GithubAPI();
@@ -57,6 +73,7 @@ class User {
 	/**
 	 * Return the Starred Repositorys from the User
 	 * @param user 
+	 * @return Dynamic
 	 */
 	public static function getStarred(user:String):Dynamic {
 		var api = new GithubAPI();

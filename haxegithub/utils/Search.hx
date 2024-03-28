@@ -22,6 +22,7 @@ class Search {
 	 * search a Item
 	 * @param name 
 	 * @param type 
+	 * @return Dynamic
 	 */
 	public static function search(name:String, ?type:SearchTypes = REPOSITORY):Dynamic {
 		var urlType = switch (type) {

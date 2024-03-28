@@ -1,4 +1,4 @@
-import haxegithub.Request;
+package haxegithub.utils;
 
 /**
  * Github Organization Util
