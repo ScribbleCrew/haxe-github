@@ -25,4 +25,15 @@ class Repository {
 		api.request('repos/$user/$repo/collaborators');
 		return api.json;
 	}
+
+	/**
+	 * get releases from a Repository
+	 * @param user 
+	 * @param repo 
+	 */
+	 public static function getReleases(user:String, repo:String):Dynamic {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo/releases');
+		return api.json;
+	}
 }
