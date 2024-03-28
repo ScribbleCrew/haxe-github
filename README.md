@@ -19,10 +19,10 @@ haxelib git haxe-github https://github.com/GuineaPigUuhh/haxe-github.git
 ```haxe
 import haxegithub.utils.*;
 
-var target_user = User.get('GuineaPigUuhh');
-var target_repository = Repository.get('GuineaPigUuhh', 'haxe-github');
+final name:String = 'GuineaPigUuhh';
+final reponame:String = 'haxe-github';
 
-trace("USER: " + target_user + "\nREPOSITORY: " + target_repository);
+trace("USER: " + User.get(name) + "\nREPOSITORY: " + Repository.get(name, reponame));
 /*
 Result:
 

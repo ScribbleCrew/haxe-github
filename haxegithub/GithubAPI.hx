@@ -4,6 +4,8 @@ import haxe.Http;
 import haxe.Json;
 
 class GithubAPI {
+	public var apiUrl:String = 'https://api.github.com/';
+
 	/**
 	 * It's for the more complex things
 	 */
@@ -13,6 +15,16 @@ class GithubAPI {
 	 * Request Value
 	 */
 	public var data:String = "";
+
+	/**
+	 * Request Bytes Value
+	 */
+	public var bytes:Null<haxe.io.Bytes> = null;
+
+	/**
+	 * Current Error
+	 */
+	public var current_error:Null<String> = null;
 
 	/**
 	 * JSON Data
@@ -27,18 +39,29 @@ class GithubAPI {
 	 * Request to Github API
 	 * @param url 
 	 */
-	public function request(url:String):Void {
-		var api = new Http('https://api.github.com/' + url);
+	public function request(url:String, post:Bool = false, data:Null<Any> = null, method:String = 'GET'):Void {
+		var api = new Http(apiUrl + url);
 		api.setHeader("User-Agent", "request");
 		if (token != null)
 			api.setHeader("Authorization", "token " + token);
+		if (data != null)
+			api.setPostData(Json.stringify(data));
+		var responseBytes = new haxe.io.BytesOutput();
 
-		api.onData = function(data) {
-			this.data = data;
-			json = Json.parse(data);
+		api.onError = function(e) {
+			errorhandler(current_error = e);
 		};
-		api.onError = function(error) trace(error);
 
-		api.request();
+		api.customRequest(post, responseBytes, null, method.toUpperCase());
+
+		var response = responseBytes.getBytes();
+
+		bytes = response;
+		data = response.toString();
+		json = Json.parse(data);
+	}
+
+	private function errorhandler(motive:String = 'Unknown') {
+		Sys.println('[haxe-github Error]: $motive');
 	}
 }
