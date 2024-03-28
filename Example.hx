@@ -3,9 +3,9 @@ package;
 import haxegithub.utils.*;
 
 /**
- * Exemple of Lib
+ * Example of Lib
  */
-class Exemple {
+class Example {
 	static function main() {
 		final name:String = 'GuineaPigUuhh';
 		final reponame:String = 'haxe-github';
