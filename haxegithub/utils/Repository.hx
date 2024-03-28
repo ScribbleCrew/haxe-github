@@ -8,7 +8,7 @@ class Repository {
 	 * Return the Repository JSON
 	 * @param user 
 	 * @param repo 
-	 * @return Dynamic
+	 * @return api.json
 	 */
 	public static function get(user:String, repo:String):Dynamic {
 		var api = new GithubAPI();
@@ -20,7 +20,7 @@ class Repository {
 	 * get Contributors from a Repository
 	 * @param user 
 	 * @param repo 
-	 * @return Dynamic
+	 * @return api.json
 	 */
 	public static function getContributors(user:String, repo:String):Dynamic {
 		var api = new GithubAPI();

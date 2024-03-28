@@ -48,9 +48,7 @@ class GithubAPI {
 			api.setPostData(Json.stringify(data));
 		var responseBytes = new haxe.io.BytesOutput();
 
-		api.onError = function(e) {
-			errorhandler(current_error = e);
-		};
+		api.onError = function(e) errorhandler(current_error = e);
 
 		api.customRequest(post, responseBytes, null, method.toUpperCase());
 
@@ -61,6 +59,10 @@ class GithubAPI {
 		json = Json.parse(data);
 	}
 
+	/**
+	 * Easy Error Tracer
+	 * @param motive 
+	 */
 	private function errorhandler(motive:String = 'Unknown') {
 		Sys.println('[haxe-github Error]: $motive');
 	}

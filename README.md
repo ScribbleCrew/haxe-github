@@ -3,7 +3,7 @@
 Haxe functions to use the [Github API](https://docs.github.com/pt/rest?apiVersion=2022-11-28).
 
 <p align="center">
-  <img src="img/img.png" width=300/>
+  <img src="img/img.png" width=550/>
 </p>
 
 ## Installation
@@ -31,7 +31,7 @@ REPOSITORY: https://api.github.com/repos/GuineaPigUuhh/haxe-github
 */
 ```
 
-### on HaxeFlixel the Lib:
+### [the Library being used in HaxeFlixel](https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple):
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/e.PNG" width=600/>
