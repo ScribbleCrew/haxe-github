@@ -11,8 +11,10 @@ class Example {
 		final reponame:String = 'haxe-github';
 
 		final repository = Repository.get(name, reponame);
+		final user = User.get(name);
 
-		Sys.println("USER: " + User.get(name).name);
+		Sys.println("USER: " + user.name);
+		Sys.println("FOLLOWERS: " + user.followers + ' FOLLOWING: ' + user.following);
 		Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
 	}
 }

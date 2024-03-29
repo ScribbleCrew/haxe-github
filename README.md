@@ -1,38 +1,46 @@
-# Haxe Github
+<div align="center"> 
+  <h1>Haxe Github</h1>
 
-Haxe functions to use the [Github API](https://docs.github.com/pt/rest?apiVersion=2022-11-28).
+  Haxe functions to use the [Github API](https://docs.github.com/pt/rest?apiVersion=2022-11-28).
 
-<p align="center">
   <img src="img/img.png" width=550/>
-</p>
 
-## Installation
+  ## Installation
 
-on GIT:
+  on GIT:
 
-```bash
-haxelib git haxe-github https://github.com/GuineaPigUuhh/haxe-github.git
-```
+  ```bash
+  haxelib git haxe-github https://github.com/GuineaPigUuhh/haxe-github.git
+  ```
 
-## Usage Exemple
+  ## Usage Exemple
+  </div>
 
-```haxe
+  ```haxe
 import haxegithub.utils.*;
 
 final name:String = 'GuineaPigUuhh';
 final reponame:String = 'haxe-github';
 
-trace("USER: " + User.get(name) + "\nREPOSITORY: " + Repository.get(name, reponame));
-/*
-Result:
+final repository = Repository.get(name, reponame);
+final user = User.get(name);
 
-USER: https://api.github.com/users/GuineaPigUuhh
-REPOSITORY: https://api.github.com/repos/GuineaPigUuhh/haxe-github
-*/
-```
+Sys.println("USER: " + user.name);
+Sys.println("FOLLOWERS: " + user.followers + ' FOLLOWING: ' + user.following);
+Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
+	
+  /*
+  Result:
 
-### [the Library being used in HaxeFlixel](https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple):
+  USER: https://api.github.com/users/GuineaPigUuhh
+  FOLLOWERS: 11 FOLLOWING: 68
+  REPOSITORY: https://api.github.com/repos/GuineaPigUuhh/haxe-github
+  */
+  ```
+<div align="center"> 
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/e.PNG" width=600/>
-</p>
+  ### [the Library being used in HaxeFlixel](https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple):
+
+  <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
+    
+</div>

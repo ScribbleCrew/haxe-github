@@ -46,9 +46,10 @@ class Repository {
 	 * @param user 
 	 * @param repo 
 	 */
-	public static function getReleases(user:String, repo:String):Dynamic {
+	public static function getReleases(user:String, repo:String, ?lastest:Bool = false):Dynamic {
 		var api = new GithubAPI();
 		api.request('repos/$user/$repo/releases');
 		return api.json;
 	}
+	
 }
