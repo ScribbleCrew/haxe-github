@@ -5,6 +5,10 @@ import haxe.Json;
 import haxe.io.Path;
 
 class GithubAPI {
+
+	/**
+	* pretty self explanatory 
+	*/
 	public var apiUrl:String = 'https://api.github.com/';
 
 	/**
@@ -13,17 +17,17 @@ class GithubAPI {
 	public var token:Null<String> = null;
 
 	/**
-	 * Request Value
+	 * The Request Value
 	 */
 	public var data:String = "";
 
 	/**
-	 * Request Bytes Value
+	 * The Request Bytes Value
 	 */
 	public var bytes:Null<haxe.io.Bytes> = null;
 
 	/**
-	 * Current Error
+	 * The Current Error
 	 */
 	public var current_error:Null<String> = null;
 
