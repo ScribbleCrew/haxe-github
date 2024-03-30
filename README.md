@@ -3,7 +3,7 @@
 
   Haxe functions to use the [Github API](https://docs.github.com/pt/rest?apiVersion=2022-11-28).
 
-  <img src="img/img.png" width=550/>
+  <img src="img/imgSharp.png" width=550/>
 
   ## Installation
 
