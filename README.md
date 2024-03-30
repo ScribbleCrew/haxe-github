@@ -1,19 +1,22 @@
 <div align="center"> 
   <h1>Haxe Github</h1>
 
-  Haxe functions to use the [Github API](https://docs.github.com/pt/rest?apiVersion=2022-11-28).
-
+  Haxe functions to use the <a href='https://docs.github.com/pt/rest?apiVersion=2022-11-28'>GitHub API Integration</a>.
   <img src="img/imgSharp.png" width=550/>
 
-  ## Installation
+  <h2>Installation</h2>
 
-  on GIT:
+  put this command in your cmd:
+  ```bash
+  haxelib install haxe-github
+  ```
 
+  if you want to have the latest version of Lib:
   ```bash
   haxelib git haxe-github https://github.com/GuineaPigUuhh/haxe-github.git
   ```
 
-  ## Usage Exemple
+  <h2>Usage Exemple</h2>
 </div>
 
 ```haxe
@@ -41,7 +44,7 @@ Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
 <div align="center"> 
   If you want more demonstrations of the use of the lib, go to the examples folder
 
-  ### [the Library being used in HaxeFlixel:](https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple)
+  <h3><a href="https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple">the Library being used in HaxeFlixel:</a></h3>
 
   <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
     
