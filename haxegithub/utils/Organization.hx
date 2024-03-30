@@ -7,7 +7,7 @@ class Organization {
 	/**
 	 * Return the Organization JSON
 	 * @param organization 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function get(organization:String):Dynamic {
 		var api = new GithubAPI();
@@ -18,22 +18,22 @@ class Organization {
 	/**
 	 * Return the Organization Repositorys JSON
 	 * @param organization 
-	 * @return api.json
+	 * @return Array<Dynamic>
 	 */
-	public static function getRepositorys(organization:String):Dynamic {
+	public static function getRepositorys(organization:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('orgs/$organization/repos');
 		return api.json;
 	}
 
 	/**
-	 * Return the Organization Teams JSON
+	 * Return the Organization Members JSON
 	 * @param organization 
-	 * @return api.json
+	 * @return Array<Dynamic>
 	 */
-	public static function getTeams(organization:String):Dynamic {
+	public static function getMembers(organization:String):Array<Dynamic> {
 		var api = new GithubAPI();
-		api.request('orgs/$organization/team');
+		api.request('orgs/$organization/members');
 		return api.json;
 	}
 }

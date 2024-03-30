@@ -8,7 +8,7 @@ class Repository {
 	 * Return the Repository JSON
 	 * @param user 
 	 * @param repo 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function get(user:String, repo:String):Dynamic {
 		var api = new GithubAPI();
@@ -20,9 +20,9 @@ class Repository {
 	 * get Contributors from a Repository
 	 * @param user 
 	 * @param repo 
-	 * @return api.json
+	 * @return Array<Dynamic>
 	 */
-	public static function getContributors(user:String, repo:String):Dynamic {
+	public static function getContributors(user:String, repo:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('repos/$user/$repo/contributors');
 		return api.json;
@@ -33,9 +33,9 @@ class Repository {
 	 * @param token
 	 * @param user 
 	 * @param repo 
-	 * @return api.json
+	 * @return Array<Dynamic>
 	 */
-	public static function getCollaborators(token:String, user:String, repo:String):Dynamic {
+	public static function getCollaborators(token:String, user:String, repo:String):Array<Dynamic> {
 		var api = new GithubAPI(token);
 		api.request('repos/$user/$repo/collaborators');
 		return api.json;
@@ -45,14 +45,11 @@ class Repository {
 	 * get releases from a Repository
 	 * @param user 
 	 * @param repo 
-	 * @param latest
+	 * @return Array<Dynamic>
 	 */
-	public static function getReleases(user:String, repo:String, latest:Bool = false):Dynamic {
+	public static function getReleases(user:String, repo:String, ?lastest:Bool = false):Array<Dynamic> {
 		var api = new GithubAPI();
-		if (latest)
-			api.request('repos/$user/$repo/releases');
-		else
-			api.request('repos/$user/$repo/releases/latest');
+		api.request('repos/$user/$repo/releases');
 		return api.json;
 	}
 }
