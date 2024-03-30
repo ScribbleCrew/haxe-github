@@ -1,4 +1,4 @@
-package haxegithub.flixel.shader;
+package haxegithub.flixel.shaders;
 
 #if flixel
 import flixel.system.FlxAssets.FlxShader;
