@@ -22,7 +22,7 @@ class Repository {
 	 * @param repo 
 	 * @return api.json
 	 */
-	public static function getContributors(user:String, repo:String):Array<Dynamic> {
+	public static function getContributors(user:String, repo:String):Array<Any> {
 		var api = new GithubAPI();
 		api.request('repos/$user/$repo/contributors');
 		return api.json;
@@ -35,7 +35,7 @@ class Repository {
 	 * @param repo 
 	 * @return api.json
 	 */
-	public static function getCollaborators(token:String, user:String, repo:String):Array<Any> {
+	public static function getCollaborators(token:String, user:String, repo:String):Array<Dynamic> {
 		var api = new GithubAPI(token);
 		api.request('repos/$user/$repo/collaborators');
 		return api.json;
