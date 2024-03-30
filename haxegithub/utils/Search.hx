@@ -18,7 +18,7 @@ class Search {
 	 * Search a Repository
 	 * @param name 
 	 * @param specification 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function repository(name:String, ?specification:SearchSpecification) {
 		if (specification == null)
@@ -35,7 +35,7 @@ class Search {
 	 * Search a User
 	 * @param name 
 	 * @param specification
-	 * @return api.json 
+	 * @return Dynamic
 	 */
 	public static function user(name:String, ?specification:SearchSpecification) {
 		if (specification == null)
@@ -52,7 +52,7 @@ class Search {
 	 * Search a Topic
 	 * @param name 
 	 * @param specification 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function topic(name:String, ?specification:SearchSpecification) {
 		if (specification == null)
@@ -69,7 +69,7 @@ class Search {
 	 * Search an Issue
 	 * @param name 
 	 * @param specification 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function issue(name:String, ?specification:SearchSpecification) {
 		if (specification == null)
@@ -86,7 +86,7 @@ class Search {
 	 * Search a Commit
 	 * @param name 
 	 * @param specification 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function commit(name:String, ?specification:SearchSpecification) {
 		if (specification == null)
@@ -103,7 +103,7 @@ class Search {
 	 * Search a Label
 	 * @param name 
 	 * @param specification 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function label(name:String, ?specification:SearchSpecification) {
 		if (specification == null)
@@ -120,7 +120,7 @@ class Search {
 	 * Search Code
 	 * @param name 
 	 * @param specification 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function code(name:String, ?specification:SearchSpecification) {
 		if (specification == null)
@@ -136,6 +136,7 @@ class Search {
 	/**
 	 * Parse the Specification Object into a Part of the GitHub Search URL
 	 * @param object 
+	 * @return String
 	 */
 	private static function parseObjectToSpecification(object:SearchSpecification) {
 		var text = '';

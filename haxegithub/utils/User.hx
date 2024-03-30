@@ -7,7 +7,7 @@ class User {
 	/**
 	 * Return the User JSON
 	 * @param user 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function get(user:String):Dynamic {
 		var api = new GithubAPI();
@@ -18,7 +18,7 @@ class User {
 	/**
 	 * Return the Full User JSON, Requires the Token
 	 * @param token 
-	 * @return api.json
+	 * @return Dynamic
 	 */
 	public static function getCurrent(token:String):Dynamic {
 		var api = new GithubAPI(token);
@@ -29,7 +29,7 @@ class User {
 	/**
 	 * Return the User Followers JSON
 	 * @param user 
-	 * @return api.json
+	 * @return Array<Dynamic>
 	 */
 	public static function getFollowers(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
@@ -40,7 +40,7 @@ class User {
 	/**
 	 * Return the User Following Json
 	 * @param user 
-	 * @return api.json
+	 * @return Array<Dynamic>
 	 */
 	public static function getFollowing(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
@@ -49,9 +49,9 @@ class User {
 	}
 
 	/**
-	 * Return the Repositorys from the User
+	 * Return the Repositorys from a User
 	 * @param user 
-	 * @return Dynamic
+	 * @return Array<Dynamic>
 	 */
 	public static function getRepositorys(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
@@ -60,9 +60,9 @@ class User {
 	}
 
 	/**
-	 * Return the Gits from the user
+	 * Return the Gits from a User
 	 * @param user 
-	 * @return Dynamic
+	 * @return Array<Dynamic>
 	 */
 	public static function getGists(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
@@ -71,13 +71,46 @@ class User {
 	}
 
 	/**
-	 * Return the Starred Repositorys from the User
+	 * Return the Starred Repositorys from a User
 	 * @param user 
-	 * @return Dynamic
+	 * @return Array<Dynamic>
 	 */
 	public static function getStarred(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('users/$user/starred');
+		return api.json;
+	}
+
+	/**
+	 * Return the Organizations from a User
+	 * @param user 
+	 * @return Array<Dynamic>
+	 */
+	public static function getOrganizations(user:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('users/$user/orgs');
+		return api.json;
+	}
+
+	/**
+	 * Return the Events from a User
+	 * @param user 
+	 * @return Array<Dynamic>
+	 */
+	public static function getEvents(user:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('users/$user/events');
+		return api.json;
+	}
+
+	/**
+	 * Return the Received Events from a User
+	 * @param user 
+	 * @return Array<Dynamic>
+	 */
+	public static function getReceivedEvents(user:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('users/$user/received_events');
 		return api.json;
 	}
 }
