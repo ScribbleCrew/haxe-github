@@ -31,7 +31,7 @@ class User {
 	 * @param user 
 	 * @return api.json
 	 */
-	public static function getFollowers(user:String):Dynamic {
+	public static function getFollowers(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('users/$user/followers');
 		return api.json;
@@ -42,7 +42,7 @@ class User {
 	 * @param user 
 	 * @return api.json
 	 */
-	public static function getFollowing(user:String):Dynamic {
+	public static function getFollowing(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('users/$user/following');
 		return api.json;
@@ -53,7 +53,7 @@ class User {
 	 * @param user 
 	 * @return Dynamic
 	 */
-	public static function getRepositorys(user:String):Dynamic {
+	public static function getRepositorys(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('users/$user/repo');
 		return api.json;
@@ -64,7 +64,7 @@ class User {
 	 * @param user 
 	 * @return Dynamic
 	 */
-	public static function getGists(user:String):Dynamic {
+	public static function getGists(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('users/$user/gists');
 		return api.json;
@@ -75,7 +75,7 @@ class User {
 	 * @param user 
 	 * @return Dynamic
 	 */
-	public static function getStarred(user:String):Dynamic {
+	public static function getStarred(user:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('users/$user/starred');
 		return api.json;

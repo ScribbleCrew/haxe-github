@@ -20,20 +20,20 @@ class Organization {
 	 * @param organization 
 	 * @return api.json
 	 */
-	public static function getRepositorys(organization:String):Dynamic {
+	public static function getRepositorys(organization:String):Array<Dynamic> {
 		var api = new GithubAPI();
 		api.request('orgs/$organization/repos');
 		return api.json;
 	}
 
 	/**
-	 * Return the Organization Teams JSON
+	 * Return the Organization Members JSON
 	 * @param organization 
 	 * @return api.json
 	 */
-	public static function getTeams(organization:String):Dynamic {
+	public static function getMembers(organization:String):Array<Dynamic> {
 		var api = new GithubAPI();
-		api.request('orgs/$organization/team');
+		api.request('orgs/$organization/members');
 		return api.json;
 	}
 }

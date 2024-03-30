@@ -14,9 +14,9 @@
   ```
 
   ## Usage Exemple
-  </div>
+</div>
 
-  ```haxe
+```haxe
 import haxegithub.utils.*;
 
 final name:String = 'GuineaPigUuhh';
@@ -29,17 +29,19 @@ Sys.println("USER: " + user.name);
 Sys.println("FOLLOWERS: " + user.followers + ' FOLLOWING: ' + user.following);
 Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
 	
-  /*
+/*
   Result:
 
   USER: https://api.github.com/users/GuineaPigUuhh
   FOLLOWERS: 11 FOLLOWING: 68
   REPOSITORY: https://api.github.com/repos/GuineaPigUuhh/haxe-github
-  */
-  ```
-<div align="center"> 
+*/
+```
 
-  ### [the Library being used in HaxeFlixel](https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple):
+<div align="center"> 
+  If you want more demonstrations of the use of the lib, go to the examples folder
+
+  ### [the Library being used in HaxeFlixel:](https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple)
 
   <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
     

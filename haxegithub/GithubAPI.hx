@@ -2,6 +2,7 @@ package haxegithub;
 
 import haxe.Http;
 import haxe.Json;
+import haxe.io.Path;
 
 class GithubAPI {
 	public var apiUrl:String = 'https://api.github.com/';
@@ -40,7 +41,7 @@ class GithubAPI {
 	 * @param url 
 	 */
 	public function request(url:String, post:Bool = false, data:Null<Any> = null, method:String = 'GET'):Void {
-		var api = new Http(apiUrl + url);
+		var api = new Http(Path.join([apiUrl, url]));
 		api.setHeader("User-Agent", "request");
 		if (token != null)
 			api.setHeader("Authorization", "token " + token);
