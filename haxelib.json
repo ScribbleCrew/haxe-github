@@ -2,8 +2,8 @@
   "name": "haxe-github",
   "url": "https://github.com/GuineaPigUuhh/haxe-github",
   "license": "MIT",
-  "tags": ["api", "github-api"],
-  "description": "haxe functions to use the Github API.",
+  "tags": ["api", "github-api", "github"],
+  "description": "Haxe Functions for GitHub API Integration.",
   "version": "1.1.0",
   "releasenote": "Simple.",
   "contributors": ["GuineaPigUuhh"]
