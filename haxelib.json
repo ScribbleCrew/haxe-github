@@ -4,7 +4,7 @@
   "license": "MIT",
   "tags": ["api", "github-api", "github"],
   "description": "Haxe Functions for GitHub API Integration.",
-  "version": "1.1.0",
-  "releasenote": "Simple.",
-  "contributors": ["GuineaPigUuhh"]
+  "version": "1.1.2",
+  "releasenote": "New Things.",
+  "contributors": ["GuineaPigUuhh", "Hackx2"]
 }
