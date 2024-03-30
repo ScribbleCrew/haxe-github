@@ -3,7 +3,7 @@ package haxegithub.flixel.shader;
 #if flixel
 import flixel.system.FlxAssets.FlxShader;
 
-class CircleShader {
+class CircleAvatarShader {
 	public var shader(default, null):Shader;
 
 	public function new() {
