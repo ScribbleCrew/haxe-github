@@ -45,11 +45,13 @@ class Repository {
 	 * get releases from a Repository
 	 * @param user 
 	 * @param repo 
+	 * @param latest
 	 * @return Array<Dynamic>
 	 */
-	public static function getReleases(user:String, repo:String, ?lastest:Bool = false):Array<Dynamic> {
+	public static function getReleases(user:String, repo:String, latest:Bool = false):Dynamic {
 		var api = new GithubAPI();
-		api.request('repos/$user/$repo/releases');
+		if(latest) api.request('repos/$user/$repo/releases');
+		else api.request('repos/$user/$repo/releases/latest');
 		return api.json;
 	}
 }
