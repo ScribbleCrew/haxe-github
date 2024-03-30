@@ -1,9 +1,10 @@
 <div align="center"> 
   <h1>Haxe Github</h1>
-
-  Haxe functions to use the <a href='https://docs.github.com/pt/rest?apiVersion=2022-11-28'>GitHub API Integration</a>.
+  <h4>
+  Haxe functions to use the
+  <a href='https://docs.github.com/en/rest?apiVersion=2022-11-28'>GitHub API Integration</a>.
+  </h4>
   <img src="img/imgSharp.png" width=550/>
-
   <h2>Installation</h2>
 
   put this command in your cmd:
@@ -31,7 +32,9 @@ final user = User.get(name);
 Sys.println("USER: " + user.name);
 Sys.println("FOLLOWERS: " + user.followers + ' FOLLOWING: ' + user.following);
 Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
-	
+```
+
+```haxe
 /*
   Result:
 
@@ -44,8 +47,9 @@ Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
 <div align="center"> 
   If you want more demonstrations of the use of the lib, go to the examples folder
 
-  <h3><a href="https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple">the Library being used in HaxeFlixel:</a></h3>
+  ---
 
-  <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
-    
+  <h3><a href="https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple">The library being used in HaxeFlixel:</a></h3>
+
+  <img style="border-radius:25px" src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
 </div>
