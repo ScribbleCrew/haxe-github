@@ -33,7 +33,7 @@ Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
   Result:
 
   USER: https://api.github.com/users/GuineaPigUuhh
-  FOLLOWERS: 11 FOLLOWING: 68
+  FOLLOWERS: 12 FOLLOWING: 71
   REPOSITORY: https://api.github.com/repos/GuineaPigUuhh/haxe-github
 */
 ```
