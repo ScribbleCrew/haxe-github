@@ -36,8 +36,9 @@ class GithubAPI {
 	 */
 	public var json:Dynamic = null;
 
-	public function new(?token:Null<String>):Void
+	public function new(?token:Null<String>):Void {
 		this.token = token;
+	}
 
 	/**
 	 * Request to Github API
@@ -67,7 +68,7 @@ class GithubAPI {
 	 * Easy Error Tracer
 	 * @param motive 
 	 */
-	private function errorhandler(motive:String = 'Unknown')
+	private function errorhandler(motive:String = 'Unknown') {
 		Sys.println('[haxe-github Error]: $motive');
-
+	}
 }
