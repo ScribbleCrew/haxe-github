@@ -41,10 +41,7 @@ class GithubAPI {
 
 	/**
 	 * Request to Github API
-	 * @param url
-	 * @param post 
-	 * @param data
-	 * @param method
+	 * @param url 
 	 */
 	public function request(url:String, post:Bool = false, data:Null<Any> = null, method:String = 'GET'):Void {
 		var api = new Http(Path.join([apiUrl, url]));
