@@ -52,4 +52,7 @@ Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
   <h3><a href="https://github.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple">The library being used in HaxeFlixel:</a></h3>
 
   <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
+
+  <h2>Developers:</h2>
+  <a href="https://github.com/GuineaPigUuhh/">GuineaPigUuhh</a>
 </div>
