@@ -53,6 +53,6 @@ Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
 
   <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
 
-  <h2>Developers:</h2>
+  <h2>Developer:</h2>
   <a href="https://github.com/GuineaPigUuhh/">GuineaPigUuhh</a>
 </div>
