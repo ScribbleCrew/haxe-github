@@ -3,13 +3,12 @@ package haxegithub;
 import haxe.Http;
 import haxe.Json;
 import haxe.io.Path;
-import haxe.io.BytesOutput;
-import haxe.io.Bytes;
 
 class GithubAPI {
+
 	/**
-	 * pretty self explanatory 
-	 */
+	* pretty self explanatory 
+	*/
 	public var apiUrl:String = 'https://api.github.com/';
 
 	/**
@@ -25,7 +24,7 @@ class GithubAPI {
 	/**
 	 * The Request Bytes Value
 	 */
-	public var bytes:Null<Bytes> = null;
+	public var bytes:Null<haxe.io.Bytes> = null;
 
 	/**
 	 * The Current Error
@@ -42,10 +41,14 @@ class GithubAPI {
 
 	/**
 	 * Request to Github API
+<<<<<<< HEAD
 	 * @param url
 	 * @param post 
 	 * @param data
 	 * @param method
+=======
+	 * @param url 
+>>>>>>> parent of e402652 (Update GithubAPI.hx)
 	 */
 	public function request(url:String, post:Bool = false, data:Null<Any> = null, method:String = 'GET'):Void {
 		var api = new Http(Path.join([apiUrl, url]));
@@ -54,7 +57,7 @@ class GithubAPI {
 			api.setHeader("Authorization", "token " + token);
 		if (data != null)
 			api.setPostData(Json.stringify(data));
-		var responseBytes = new BytesOutput();
+		var responseBytes = new haxe.io.BytesOutput();
 
 		api.onError = function(e) errorhandler(current_error = e);
 
@@ -73,4 +76,5 @@ class GithubAPI {
 	 */
 	private function errorhandler(motive:String = 'Unknown')
 		Sys.println('[haxe-github Error]: $motive');
+
 }
