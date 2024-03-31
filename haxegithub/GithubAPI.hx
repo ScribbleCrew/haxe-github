@@ -42,7 +42,7 @@ class GithubAPI {
 
 	/**
 	 * Request to Github API
-	 * @param url url
+	 * @param url
 	 * @param post 
 	 * @param data
 	 * @param method
