@@ -53,4 +53,52 @@ class Repository {
 		api.request('repos/$user/$repo/releases' + (latest ? '/latest' : ''));
 		return api.json;
 	}
+
+	/**
+	 * get forks from a Repository
+	 * @param user 
+	 * @param repo 
+	 * @return Array<Dynamic>
+	 */
+	public static function getForks(user:String, repo:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo/forks');
+		return api.json;
+	}
+
+	/**
+	 * get stars from a Repository
+	 * @param user 
+	 * @param repo 
+	 * @return Array<Dynamic>
+	 */
+	public static function getStarred(user:String, repo:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo/starred');
+		return api.json;
+	}
+
+	/**
+	 * get languages from a Repository
+	 * @param user 
+	 * @param repo 
+	 * @return Dynamic
+	 */
+	public static function getLanguages(user:String, repo:String):Dynamic {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo/starred');
+		return api.json;
+	}
+
+	/**
+	 * get events from a Repository
+	 * @param user 
+	 * @param repo 
+	 * @return Array<Dynamic>
+	 */
+	public static function getEvents(user:String, repo:String, ?issue:Bool = false):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo' + (issue ? '/issues' : '') + '/events');
+		return api.json;
+	}
 }
