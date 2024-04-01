@@ -27,13 +27,46 @@ class Organization {
 	}
 
 	/**
+	 * Return the Organization Events JSON
+	 * @param organization 
+	 * @return Array<Dynamic>
+	 */
+	public static function getEvents(organization:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('orgs/$organization/events');
+		return api.json;
+	}
+
+	/**
+	 * Return the Organization Hooks JSON
+	 * @param organization 
+	 * @return Array<Dynamic>
+	 */
+	public static function getHooks(organization:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('orgs/$organization/hooks');
+		return api.json;
+	}
+
+	/**
+	 * Return the Organization Issues JSON
+	 * @param organization
+	 * @return Array<Dynamic>
+	 */
+	public static function getIssues(organization:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('orgs/$organization/issues');
+		return api.json;
+	}
+
+	/**
 	 * Return the Organization Members JSON
 	 * @param organization 
 	 * @return Array<Dynamic>
 	 */
-	public static function getMembers(organization:String):Array<Dynamic> {
+	public static function getMembers(organization:String, ?public_members:Bool = true):Array<Dynamic> {
 		var api = new GithubAPI();
-		api.request('orgs/$organization/members');
+		api.request('orgs/$organization/' + (public_members ? 'public_members' : 'members'));
 		return api.json;
 	}
 }

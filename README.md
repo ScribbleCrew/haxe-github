@@ -23,21 +23,19 @@
 ```haxe
 import haxegithub.utils.*;
 
-final name:String = 'GuineaPigUuhh';
+final username:String = 'GuineaPigUuhh';
 final reponame:String = 'haxe-github';
 
-final repository = Repository.get(name, reponame);
-final user = User.get(name);
+final repository = Repository.get(username, reponame);
+final user = User.get(username);
 
 Sys.println("USER: " + user.name);
 Sys.println("FOLLOWERS: " + user.followers + ' FOLLOWING: ' + user.following);
 Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
 ```
-
+Result:
 ```haxe
 /*
-  Result:
-
   USER: https://api.github.com/users/GuineaPigUuhh
   FOLLOWERS: 12 FOLLOWING: 71
   REPOSITORY: https://api.github.com/repos/GuineaPigUuhh/haxe-github

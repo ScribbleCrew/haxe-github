@@ -5,10 +5,9 @@ import haxe.Json;
 import haxe.io.Path;
 
 class GithubAPI {
-
 	/**
-	* pretty self explanatory 
-	*/
+	 * pretty self explanatory 
+	 */
 	public var apiUrl:String = 'https://api.github.com/';
 
 	/**
@@ -36,13 +35,16 @@ class GithubAPI {
 	 */
 	public var json:Dynamic = null;
 
-	public function new(?token:Null<String>):Void {
+	public function new(?token:String):Void {
 		this.token = token;
 	}
 
 	/**
 	 * Request to Github API
 	 * @param url 
+	 * @param post 
+	 * @param data 
+	 * @param method 
 	 */
 	public function request(url:String, post:Bool = false, data:Null<Any> = null, method:String = 'GET'):Void {
 		var api = new Http(Path.join([apiUrl, url]));

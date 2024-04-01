@@ -94,6 +94,7 @@ class Repository {
 	 * get events from a Repository
 	 * @param user 
 	 * @param repo 
+	 * @param issue
 	 * @return Array<Dynamic>
 	 */
 	public static function getEvents(user:String, repo:String, ?issue:Bool = false):Array<Dynamic> {
