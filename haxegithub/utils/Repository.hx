@@ -86,7 +86,7 @@ class Repository {
 	 */
 	public static function getLanguages(user:String, repo:String):Dynamic {
 		var api = new GithubAPI();
-		api.request('repos/$user/$repo/starred');
+		api.request('repos/$user/$repo/languages');
 		return api.json;
 	}
 
