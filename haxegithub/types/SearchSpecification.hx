@@ -20,7 +20,7 @@ class Parser {
 				page: 0,
 				per_page: 10
 			};
-		var text:String;
+		var text:String = '';
 		for (i in Reflect.fields(object)) {
 			var value = Reflect.field(object, i);
 			var prefixs = (i == 'language' ? ['&', '='] : ['+', ':']);
