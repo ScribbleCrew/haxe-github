@@ -102,4 +102,29 @@ class Repository {
 		api.request('repos/$user/$repo' + (issue ? '/issues' : '') + '/events');
 		return api.json;
 	}
+
+	/**
+	 * get issues from a Repository
+	 * @param user 
+	 * @param repo 
+	 * @return Array<Dynamic>
+	 */
+	public static function getIssues(user:String, repo:String):Array<Dynamic> {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo/issues');
+		return api.json;
+	}
+
+	/**
+	 * get branches from a Repository
+	 * @param user 
+	 * @param repo 
+	 * @param branche 
+	 * @return Dynamic
+	 */
+	public static function getBranches(user:String, repo:String, ?branche:String):Dynamic {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo/branches' + (branche != null ? '/$branche' : ''));
+		return api.json;
+	}
 }

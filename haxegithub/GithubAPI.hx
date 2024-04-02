@@ -3,12 +3,14 @@ package haxegithub;
 import haxe.Http;
 import haxe.Json;
 import haxe.io.Path;
+import haxe.io.BytesOutput;
+import haxe.io.Bytes;
 
 class GithubAPI {
 	/**
 	 * pretty self explanatory 
 	 */
-	public var apiUrl:String = 'https://api.github.com/';
+	public static final apiUrl:String = 'https://api.github.com/';
 
 	/**
 	 * It's for the more complex things
@@ -23,7 +25,7 @@ class GithubAPI {
 	/**
 	 * The Request Bytes Value
 	 */
-	public var bytes:Null<haxe.io.Bytes> = null;
+	public var bytes:Null<Bytes> = null;
 
 	/**
 	 * The Current Error
@@ -53,13 +55,13 @@ class GithubAPI {
 			api.setHeader("Authorization", "token " + token);
 		if (data != null)
 			api.setPostData(Json.stringify(data));
-		var responseBytes = new haxe.io.BytesOutput();
+		var output = new BytesOutput();
 
-		api.onError = function(e) errorhandler(current_error = e);
+		api.onError = function(e) errorhandler(e);
 
-		api.customRequest(post, responseBytes, null, method.toUpperCase());
+		api.customRequest(post, output, null, method.toUpperCase());
 
-		var response = responseBytes.getBytes();
+		var response = output.getBytes();
 
 		bytes = response;
 		data = response.toString();
@@ -71,6 +73,7 @@ class GithubAPI {
 	 * @param motive 
 	 */
 	private function errorhandler(motive:String = 'Unknown') {
-		Sys.println('[haxe-github Error]: $motive');
+		current_error = motive;
+		Sys.println('[haxe-github Error]: $current_error');
 	}
 }

@@ -97,20 +97,9 @@ class User {
 	 * @param user 
 	 * @return Array<Dynamic>
 	 */
-	public static function getEvents(user:String):Array<Dynamic> {
+	public static function getEvents(user:String, ?received:Bool = true):Array<Dynamic> {
 		var api = new GithubAPI();
-		api.request('users/$user/events');
-		return api.json;
-	}
-
-	/**
-	 * Return the Received Events from a User
-	 * @param user 
-	 * @return Array<Dynamic>
-	 */
-	public static function getReceivedEvents(user:String):Array<Dynamic> {
-		var api = new GithubAPI();
-		api.request('users/$user/received_events');
+		api.request('users/$user/' + (received ? 'received_events' : 'events'));
 		return api.json;
 	}
 }
