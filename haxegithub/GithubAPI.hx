@@ -57,7 +57,7 @@ class GithubAPI {
 			api.setPostData(Json.stringify(data));
 		var output = new BytesOutput();
 
-		api.onError = function(e) errorhandler(e);
+		api.onError = onError;
 
 		api.customRequest(post, output, null, method.toUpperCase());
 
@@ -69,11 +69,11 @@ class GithubAPI {
 	}
 
 	/**
-	 * Easy Error Tracer
-	 * @param motive 
+	 * This function will be executed when the Github API fails
+	 * @param error 
 	 */
-	private function errorhandler(motive:String = 'Unknown') {
-		current_error = motive;
+	public dynamic function onError(error:String) {
+		current_error = error;
 		Sys.println('[haxe-github Error]: $current_error');
 	}
 }

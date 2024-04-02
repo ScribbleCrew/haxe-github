@@ -16,7 +16,7 @@ class User {
 	}
 
 	/**
-	 * Return the Full User JSON, Requires the Token
+	 * Return the Full User JSON, Requires a Token!
 	 * @param token 
 	 * @return Dynamic
 	 */
