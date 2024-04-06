@@ -42,8 +42,11 @@ Result:
 */
 ```
 
-<div align="center"> 
-  If you want more demonstrations of the use of the lib, go to the examples folder
+  ---
+<div align="center">
+
+> [!NOTE]
+> If you want more demonstrations of the use of the lib, go  to the examples folder
 
   ---
 
@@ -51,6 +54,9 @@ Result:
 
   <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
 
-  <h2>Developer:</h2>
-  <a href="https://github.com/GuineaPigUuhh/">GuineaPigUuhh</a>
+---
+
+  > [!NOTE]
+  > <h2>Developer:</h2>
+  > <h3><a href="https://github.com/GuineaPigUuhh/">GuineaPigUuhh</a></h3>
 </div>
