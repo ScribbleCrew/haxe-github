@@ -6,6 +6,8 @@ import haxe.io.Path;
 import haxe.io.BytesOutput;
 import haxe.io.Bytes;
 
+using StringTools;
+
 class GithubAPI {
 	/**
 	 * pretty self explanatory 
@@ -28,14 +30,23 @@ class GithubAPI {
 	public var bytes:Null<Bytes> = null;
 
 	/**
-	 * The Current Error
+	 * The Last Error
 	 */
-	public var current_error:Null<String> = null;
+	public var last_error:Null<String> = null;
 
 	/**
 	 * JSON Data
 	 */
 	public var json:Dynamic = null;
+
+	/**
+	 * used to define a specific content type for the Github API
+	 */
+	public var content_type(default, set):String = "application/json";
+
+	private function set_content_type(value:String):String {
+		return content_type = (!value.startsWith('application/') ? 'application/' : '') + value;
+	}
 
 	public function new(?token:String):Void {
 		this.token = token;
@@ -53,6 +64,7 @@ class GithubAPI {
 		api.setHeader("User-Agent", "request");
 		if (token != null)
 			api.setHeader("Authorization", "token " + token);
+		api.setHeader("Content-Type", content_type);
 		if (data != null)
 			api.setPostData(Json.stringify(data));
 		var output = new BytesOutput();
@@ -73,7 +85,7 @@ class GithubAPI {
 	 * @param error 
 	 */
 	public dynamic function onError(error:String) {
-		current_error = error;
-		Sys.println('[haxe-github Error]: $current_error');
+		last_error = error;
+		Sys.println('[haxe-github Error]: $last_error');
 	}
 }

@@ -29,21 +29,23 @@ final reponame:String = 'haxe-github';
 final repository = Repository.get(username, reponame);
 final user = User.get(username);
 
-Sys.println("USER: " + user.name);
-Sys.println("FOLLOWERS: " + user.followers + ' FOLLOWING: ' + user.following);
-Sys.println("REPOSITORY: " + repository.name + ' by ' + repository.owner.login);
+Sys.println('USER: ' + user.name);
+Sys.println('FOLLOWERS: ' + user.followers + ' FOLLOWING: ' + user.following);
+Sys.println('REPOSITORY: ' + repository.name + ' by ' + repository.owner.login);
 ```
 Result:
 ```haxe
 /*
   USER: https://api.github.com/users/GuineaPigUuhh
-  FOLLOWERS: 12 FOLLOWING: 71
+  FOLLOWERS: 13 FOLLOWING: 84
   REPOSITORY: https://api.github.com/repos/GuineaPigUuhh/haxe-github
 */
 ```
 
-<div align="center"> 
-  If you want more demonstrations of the use of the lib, go to the examples folder
+  ---
+<div align="center">
+
+> If you want more demonstrations of the use of the lib, go  to the examples folder
 
   ---
 
@@ -51,6 +53,8 @@ Result:
 
   <img src="https://raw.githubusercontent.com/GuineaPigUuhh/HaxeFlixel-Github-Exemple/main/img/view.png" width=600/>
 
-  <h2>Developer:</h2>
-  <a href="https://github.com/GuineaPigUuhh/">GuineaPigUuhh</a>
+---
+
+  > <h2>Developer:</h2>
+  > <h3><a href="https://github.com/GuineaPigUuhh/">GuineaPigUuhh</a></h3>
 </div>
