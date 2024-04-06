@@ -46,6 +46,11 @@ Result:
 <div align="center">
 
 > If you want more demonstrations of the use of the lib, go  to the examples folder
+  ---
+<div align="center">
+
+> [!NOTE]
+> If you want more demonstrations of the use of the lib, go  to the examples folder
 
   ---
 
