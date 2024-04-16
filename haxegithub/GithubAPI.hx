@@ -84,8 +84,8 @@ class GithubAPI {
 	 * This function will be executed when the Github API fails
 	 * @param error 
 	 */
-	public dynamic function onError(error:String) {
-		last_error = error;
-		Sys.println('[haxe-github Error]: $last_error');
+	public dynamic function onError(e:String) {
+		last_error = e;
+        trace(last_error);
 	}
 }
