@@ -4,3 +4,6 @@ update.bat
 # VsCode Stuff
 .vscode/*
 *.code-workspace
+
+# exemple token!
+exemples/User With Token/token.txt
