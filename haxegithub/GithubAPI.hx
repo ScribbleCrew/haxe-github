@@ -77,7 +77,9 @@ class GithubAPI {
 
 		bytes = response;
 		data = response.toString();
-		json = Json.parse(data);
+		try {
+			json = Json.parse(data);
+		} catch (e) {}
 	}
 
 	/**
@@ -86,6 +88,6 @@ class GithubAPI {
 	 */
 	public dynamic function onError(e:String) {
 		last_error = e;
-        trace(last_error);
+		trace(last_error);
 	}
 }
