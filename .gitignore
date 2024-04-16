@@ -6,4 +6,4 @@ update.bat
 *.code-workspace
 
 # exemple token!
-exemples/User With Token/token.txt
+examples/User With Token/token.txt
