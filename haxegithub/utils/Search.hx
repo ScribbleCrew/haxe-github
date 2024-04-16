@@ -4,6 +4,7 @@ import haxegithub.types.SearchSpecification;
 import haxegithub.types.SearchSpecification.Parser;
 
 /**
+ * TODO: better explain the Specification variables
  * Github Search Util
  */
 class Search {

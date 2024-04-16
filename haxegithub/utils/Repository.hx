@@ -55,6 +55,18 @@ class Repository {
 	}
 
 	/**
+	 * Return the Commits JSON
+	 * @param user 
+	 * @param repo 
+	 * @return Dynamic
+	 */
+	public static function getCommits(user:String, repo:String):Dynamic {
+		var api = new GithubAPI();
+		api.request('repos/$user/$repo/commits');
+		return api.json;
+	}
+
+	/**
 	 * get forks from a Repository
 	 * @param user 
 	 * @param repo 
