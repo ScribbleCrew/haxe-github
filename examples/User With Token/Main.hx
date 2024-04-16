@@ -6,7 +6,8 @@ import sys.FileSystem;
 
 class Main {
 	static function main() {
+		var target_user = "Hackx2";
 		var user = new TokenUser(File.getContent('token.txt'));
-		user.follow('TheRealJake_12');
+		user.follow(target_user);
 	}
 }

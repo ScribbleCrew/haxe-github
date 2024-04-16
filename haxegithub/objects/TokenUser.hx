@@ -24,4 +24,14 @@ class TokenUser {
 		var api = new GithubAPI(token);
 		api.request('user/following/' + target_user, true, null, 'DELETE');
 	}
+
+	public function deleteRepository(target_repo:String) {
+		var api = new GithubAPI(token);
+		api.request('/repos/${json.name}/$target_repo', false, null, 'DELETE');
+	}
+
+	public function updateRepository(target_repo:String, data:Dynamic) {
+		var api = new GithubAPI(token);
+		api.request('/repos/${json.name}/$target_repo', true, data, 'PATCH');
+	}
 }
