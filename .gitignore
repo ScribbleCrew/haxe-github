@@ -5,5 +5,8 @@ devtools
 .vscode/*
 *.code-workspace
 
+# Examples
+examples/*/build.hxml
+
 # Template
 examples/Template
