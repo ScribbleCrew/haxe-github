@@ -10,12 +10,12 @@ using StringTools;
 
 class GithubAPI {
 	/**
-	 * pretty self explanatory 
+	 * is the Github API Link
 	 */
 	public static final apiUrl:String = 'https://api.github.com/';
 
 	/**
-	 * It's for the more complex things
+	 * is used for tasks that need Authorization
 	 */
 	public var token:Null<String> = null;
 
@@ -35,7 +35,7 @@ class GithubAPI {
 	public var last_error:Null<String> = null;
 
 	/**
-	 * JSON Data
+	 * The Request Value Parsed in JSON
 	 */
 	public var json:Dynamic = null;
 
@@ -62,7 +62,7 @@ class GithubAPI {
 	public function request(url:String, post:Bool = false, data:Null<Any> = null, method:String = 'GET'):Void {
 		var api = new Http(Path.join([apiUrl, url]));
 		api.setHeader("User-Agent", "request");
-		if (token != null)
+		if (token != null || token != "")
 			api.setHeader("Authorization", "token " + token);
 		api.setHeader("Content-Type", content_type);
 		if (data != null)

@@ -6,4 +6,4 @@ update.bat
 *.code-workspace
 
 # Template
-examples/Template/*
+examples/Template
