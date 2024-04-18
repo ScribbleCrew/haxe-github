@@ -14,7 +14,7 @@ class Search {
 	 * @param specification 
 	 * @return Dynamic
 	 */
-	public static function repository(name:String, ?specification:SearchSpecification) {
+	public static function repository(name:String, ?specification:SearchSpecification):Dynamic {
 		var api = new GithubAPI();
 		api.request('search/repositories?q=$name' + Parser.doparse(specification));
 		return api.json;
@@ -26,7 +26,7 @@ class Search {
 	 * @param specification
 	 * @return Dynamic
 	 */
-	public static function user(name:String, ?specification:SearchSpecification) {
+	public static function user(name:String, ?specification:SearchSpecification):Dynamic {
 		var api = new GithubAPI();
 		api.request('search/users?q=$name' + Parser.doparse(specification));
 		return api.json;
@@ -38,7 +38,7 @@ class Search {
 	 * @param specification 
 	 * @return Dynamic
 	 */
-	public static function topic(name:String, ?specification:SearchSpecification) {
+	public static function topic(name:String, ?specification:SearchSpecification):Dynamic {
 		var api = new GithubAPI();
 		api.request('search/topics?q=$name' + Parser.doparse(specification));
 		return api.json;
@@ -50,7 +50,7 @@ class Search {
 	 * @param specification 
 	 * @return Dynamic
 	 */
-	public static function issue(name:String, ?specification:SearchSpecification) {
+	public static function issue(name:String, ?specification:SearchSpecification):Dynamic {
 		var api = new GithubAPI();
 		api.request('search/issues?q=$name' + Parser.doparse(specification));
 		return api.json;
@@ -62,7 +62,7 @@ class Search {
 	 * @param specification 
 	 * @return Dynamic
 	 */
-	public static function commit(name:String, ?specification:SearchSpecification) {
+	public static function commit(name:String, ?specification:SearchSpecification):Dynamic {
 		var api = new GithubAPI();
 		api.request('search/commits?q=$name' + Parser.doparse(specification));
 		return api.json;
@@ -74,7 +74,7 @@ class Search {
 	 * @param specification 
 	 * @return Dynamic
 	 */
-	public static function label(name:String, ?specification:SearchSpecification) {
+	public static function label(name:String, ?specification:SearchSpecification):Dynamic {
 		var api = new GithubAPI();
 		api.request('search/labels?q=$name' + Parser.doparse(specification));
 		return api.json;
@@ -86,7 +86,7 @@ class Search {
 	 * @param specification 
 	 * @return Dynamic
 	 */
-	public static function code(name:String, ?specification:SearchSpecification) {
+	public static function code(name:String, ?specification:SearchSpecification):Dynamic {
 		var api = new GithubAPI();
 		api.request('search/code?q=$name' + Parser.doparse(specification));
 		return api.json;

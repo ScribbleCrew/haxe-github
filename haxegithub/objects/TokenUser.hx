@@ -42,6 +42,31 @@ class TokenUser {
 	 */
 	public dynamic function onReload() {}
 
+	public function getFollowers():Array<Dynamic>
+		return User.getFollowers(username);
+
+	public function getFollowing():Array<Dynamic>
+		return User.getFollowing(username);
+
+	public function getRepositorys():Array<Dynamic>
+		return User.getRepositorys(username);
+
+	public function getGists():Array<Dynamic>
+		return User.getGists(username);
+
+	public function getOrganizations():Array<Dynamic>
+		return User.getOrganizations(username);
+
+	public function getStarred():Array<Dynamic>
+		return User.getStarred(username);
+
+	public function getEvents(?received:Bool = true)
+		return User.getEvents(username, received);
+
+	/**
+	 * Follow a user
+	 * @param target_user 
+	 */
 	public function follow(target_user:String) {
 		var api = new GithubAPI(token);
 		api.request('user/following/' + target_user, true, null, 'PUT');
