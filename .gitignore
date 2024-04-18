@@ -1,5 +1,5 @@
-# bat file so I can pull the previous versions from the repository onto my local machine
-update.bat
+# DevTools
+devtools
 
 # VsCode Stuff
 .vscode/*
