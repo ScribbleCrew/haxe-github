@@ -33,9 +33,11 @@ class TokenUser {
 
 	/**
 	 * @param token 
+	 * @param defname 
 	 */
-	public function new(?token:String):Void {
+	public function new(?token:String, defname:String = "Null"):Void {
 		this.token = token;
+		default_username = defname;
 		reload();
 	}
 
@@ -46,13 +48,13 @@ class TokenUser {
 		json = User.getCurrent(token);
 		if (json == null)
 			json = User.get(username);
-		onReload();
+		onReload(this);
 	}
 
 	/**
 	 * This Function will be executed when the User is reloaded
 	 */
-	public dynamic function onReload() {}
+	public dynamic function onReload(self:TokenUser) {}
 
 	/**
 	 * return the Followers JSON
