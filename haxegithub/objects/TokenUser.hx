@@ -43,7 +43,9 @@ class TokenUser {
 	 * Reload the User variables
 	 */
 	inline public function reload() {
-		json = User.getCurrent(token) ?? User.get(username);
+		json = User.getCurrent(token);
+		if (json == null)
+			json = User.get(username);
 		onReload();
 	}
 
