@@ -2,13 +2,12 @@ import sys.io.File;
 import haxegithub.utils.*;
 import haxegithub.GithubAPI;
 import haxegithub.objects.TokenUser;
-import haxegithub.utils.User;
 import sys.FileSystem;
 
 class Main {
 	static function main() {
-		var user = User.get('GuineaPigUuhh');
-		Sys.println(user.name);
+		var user = new TokenUser(null, 'Hackx2');
+		Sys.println(user.json.name);
 		trace(user.json);
 	}
 }

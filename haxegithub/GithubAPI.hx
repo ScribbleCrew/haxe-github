@@ -67,7 +67,7 @@ class GithubAPI {
 	public function request(url:String, post:Bool = false, data:Null<Any> = null, method:String = 'GET'):Void {
 		var api = new Http(Path.join([apiUrl, url]));
 		api.setHeader("User-Agent", "request");
-		if (token != null && token != "")
+		if (token != null)
 			api.setHeader("Authorization", "token " + token);
 		api.setHeader("Content-Type", content_type);
 		if (data != null)
