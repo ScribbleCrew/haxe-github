@@ -46,7 +46,7 @@ class TokenUser {
 	 */
 	inline public function reload() {
 		json = User.getCurrent(token);
-		if (json == null)
+		if (json.name == null)
 			json = User.get(username);
 		onReload(this);
 	}

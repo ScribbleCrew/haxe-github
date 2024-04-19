@@ -1,6 +1,3 @@
-package;
-
-import haxe.Json;
 import haxegithub.utils.*;
 
 class Main {

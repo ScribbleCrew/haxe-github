@@ -1,6 +1,15 @@
 @echo off
 
+:restart
+
+for /d %%D in ("*") do (
+    echo %%~nxD
+)
+echo:
+
 set /p dir=Choose an exemple: 
+cls
+
 cd %dir%
 
 if not exist build.hxml (
@@ -12,7 +21,8 @@ if not exist build.hxml (
     echo --interp
     )>build.hxml
 )
-echo Callback:
+
+echo Output:
 echo:
 haxe build.hxml
 echo:

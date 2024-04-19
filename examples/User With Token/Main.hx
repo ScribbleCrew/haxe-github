@@ -1,8 +1,5 @@
 import sys.io.File;
-import haxegithub.utils.*;
-import haxegithub.GithubAPI;
 import haxegithub.objects.TokenUser;
-import sys.FileSystem;
 
 class Main {
 	static function main() {
