@@ -1,6 +1,7 @@
 # DevTools
 devtools
 Debug.hx
+.haxelib
 
 # VsCode Stuff
 .vscode/*
